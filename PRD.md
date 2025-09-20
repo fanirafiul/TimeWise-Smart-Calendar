@@ -1,3 +1,7 @@
+Nama : Fani Rafiul Maarif
+NIM : 231240001461
+Apk Pembanding : Samsung Calendar
+
 1. Latar Belakang
 
 Banyak pengguna kalender digital saat ini merasa kesulitan mengelola jadwal, tugas, dan kolaborasi secara terintegrasi. Aplikasi kalender populer seperti Samsung Calendar memiliki fitur dasar yang baik, tetapi masih minim inovasi seperti kolaborasi real-time, integrasi task management, atau rekomendasi berbasis AI.
