@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeWise - Lofi UI/UX Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 40px;
+        }
+        .page-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .page-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .page-card h2 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .page-card p {
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+        .page-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .page-link:hover {
+            background: #2563EB;
+        }
+        .header-title {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        .header-title h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        .header-title p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-title">
+        <h1>TimeWise</h1>
+        <p>Lofi UI/UX Wireframes - Navigation Hub</p>
+    </div>
+    
+    <div class="page-grid">
+        <div class="page-card">
+            <h2>1. Login</h2>
+            <p>Halaman login dengan OAuth2 integration</p>
+            <a href="login.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>2. Register</h2>
+            <p>Halaman registrasi pengguna baru</p>
+            <a href="register.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>3. Dashboard - Monthly</h2>
+            <p>Tampilan kalender bulanan dengan event dan task</p>
+            <a href="dashboard-monthly.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>4. Dashboard - Daily</h2>
+            <p>Tampilan kalender harian dengan timeline</p>
+            <a href="dashboard-daily.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>5. Add Event</h2>
+            <p>Form untuk menambah event baru</p>
+            <a href="add-event.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>6. Event Detail</h2>
+            <p>Detail event dengan kolaborasi dan komentar</p>
+            <a href="event-detail.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>7. Task Management</h2>
+            <p>Daftar tugas dengan filter dan progress</p>
+            <a href="tasks.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>8. Add Task</h2>
+            <p>Form untuk menambah task baru</p>
+            <a href="add-task.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>9. Notifications</h2>
+            <p>Pusat notifikasi dengan filter</p>
+            <a href="notifications.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>10. Settings</h2>
+            <p>Pengaturan aplikasi dan integrasi</p>
+            <a href="settings.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>11. Collaboration</h2>
+            <p>Halaman berbagi kalender</p>
+            <a href="collaboration.html" class="page-link">Buka Halaman</a>
+        </div>
+        
+        <div class="page-card">
+            <h2>12. Mobile View</h2>
+            <p>Tampilan mobile dengan bottom navigation</p>
+            <a href="mobile.html" class="page-link">Buka Halaman</a>
+        </div>
+    </div>
+</body>
+</html>
+

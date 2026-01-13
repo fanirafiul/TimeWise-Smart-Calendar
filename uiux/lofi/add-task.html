@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task - TimeWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <a href="tasks.html" style="color: var(--text-dark); text-decoration: none;">
+                <button class="btn-icon"><i class="fas fa-arrow-left"></i></button>
+            </a>
+            <span style="font-size: 20px; font-weight: 600; margin-left: 12px;">Create New Task</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <form id="addTaskForm" onsubmit="return handleFormSubmit('addTaskForm', event)">
+            <div class="card">
+                <div class="form-group">
+                    <label class="form-label required" for="taskTitle">Task Title</label>
+                    <input type="text" id="taskTitle" name="taskTitle" class="form-input" placeholder="Enter task title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="taskDescription">Description</label>
+                    <textarea id="taskDescription" name="taskDescription" class="form-textarea" placeholder="Add task description"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="dueDate">Due Date</label>
+                        <input type="date" id="dueDate" name="dueDate" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="dueTime">Due Time</label>
+                        <input type="time" id="dueTime" name="dueTime" class="form-input">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Priority</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="priorityLow" name="priority" value="low">
+                            <label for="priorityLow">Low</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="priorityMedium" name="priority" value="medium" checked>
+                            <label for="priorityMedium">Medium</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="priorityHigh" name="priority" value="high">
+                            <label for="priorityHigh">High</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Status</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="statusPending" name="status" value="pending" checked>
+                            <label for="statusPending">Pending</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="statusProgress" name="status" value="in-progress">
+                            <label for="statusProgress">In Progress</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="statusCompleted" name="status" value="completed">
+                            <label for="statusCompleted">Completed</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="calendar">Calendar/Category</label>
+                    <select id="calendar" name="calendar" class="form-select">
+                        <option>My Calendar</option>
+                        <option>Work</option>
+                        <option>Personal</option>
+                        <option>Project Alpha</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Reminder</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reminder1h" name="reminder" value="1h" checked>
+                            <label for="reminder1h">1 hour before deadline</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reminder1d" name="reminder" value="1d">
+                            <label for="reminder1d">1 day before</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 12px;">
+                <a href="tasks.html" class="btn btn-outline" style="flex: 1; text-align: center; text-decoration: none;">Cancel</a>
+                <button type="submit" class="btn btn-primary" style="flex: 1;">Save Task</button>
+            </div>
+        </form>
+        
+        <div class="text-center mt-2">
+            <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-size: 14px;">← Back to Navigation</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Set default date
+        const today = new Date();
+        document.getElementById('dueDate').valueAsDate = today;
+        document.getElementById('dueTime').value = '14:00';
+    </script>
+</body>
+</html>
+

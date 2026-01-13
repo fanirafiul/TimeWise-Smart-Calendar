@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - TimeWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <button class="btn-icon" onclick="alert('Menu')"><i class="fas fa-bars"></i></button>
+            <span style="font-size: 24px; font-weight: 700; color: var(--primary); margin-left: 12px;">Tasks</span>
+        </div>
+        <div class="header-actions">
+            <button class="btn-icon" onclick="alert('Search')"><i class="fas fa-search"></i></button>
+            <a href="add-task.html" class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i> Add
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-target="all-tasks">All</button>
+            <button class="tab" data-target="pending-tasks">Pending</button>
+            <button class="tab" data-target="progress-tasks">In Progress</button>
+            <button class="tab" data-target="completed-tasks">Completed</button>
+        </div>
+        
+        <div id="all-tasks" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Today - January 15, 2024</h2>
+                </div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" class="task-checkbox" onchange="TimeWise.toggleTask(this)">
+                        <div class="task-content">
+                            <div class="task-title">Complete project proposal</div>
+                            <div class="task-meta">
+                                <span class="task-priority priority-high">High</span>
+                                <span>Due: Today 14:00</span>
+                                <span><i class="fas fa-folder"></i> Project Alpha</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" class="task-checkbox" onchange="TimeWise.toggleTask(this)">
+                        <div class="task-content">
+                            <div class="task-title">Review code changes</div>
+                            <div class="task-meta">
+                                <span class="task-priority priority-medium">Medium</span>
+                                <span>Due: Today 17:00</span>
+                                <span><i class="fas fa-folder"></i> Development</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="task-item task-completed">
+                        <input type="checkbox" class="task-checkbox" checked onchange="TimeWise.toggleTask(this)">
+                        <div class="task-content">
+                            <div class="task-title">Prepare presentation</div>
+                            <div class="task-meta">
+                                <span class="task-priority priority-low">Low</span>
+                                <span>Completed</span>
+                                <span><i class="fas fa-folder"></i> Marketing</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Upcoming - January 16-20, 2024</h2>
+                </div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" class="task-checkbox" onchange="TimeWise.toggleTask(this)">
+                        <div class="task-content">
+                            <div class="task-title">Submit monthly report</div>
+                            <div class="task-meta">
+                                <span class="task-priority priority-high">High</span>
+                                <span>Due: Jan 18</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" class="task-checkbox" onchange="TimeWise.toggleTask(this)">
+                        <div class="task-content">
+                            <div class="task-title">Update documentation</div>
+                            <div class="task-meta">
+                                <span class="task-priority priority-medium">Medium</span>
+                                <span>Due: Jan 20</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Goals Progress</h2>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span><strong>Q1 Goals</strong></span>
+                        <span><strong>60%</strong></span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pending-tasks" class="tab-content" style="display: none;">
+            <div class="card">
+                <p style="text-align: center; color: var(--text-gray); padding: 40px;">No pending tasks</p>
+            </div>
+        </div>
+        
+        <div id="progress-tasks" class="tab-content" style="display: none;">
+            <div class="card">
+                <p style="text-align: center; color: var(--text-gray); padding: 40px;">No tasks in progress</p>
+            </div>
+        </div>
+        
+        <div id="completed-tasks" class="tab-content" style="display: none;">
+            <div class="card">
+                <ul class="task-list">
+                    <li class="task-item task-completed">
+                        <input type="checkbox" class="task-checkbox" checked onchange="TimeWise.toggleTask(this)">
+                        <div class="task-content">
+                            <div class="task-title">Prepare presentation</div>
+                            <div class="task-meta">
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="text-center mt-2">
+            <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-size: 14px;">← Back to Navigation</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event - TimeWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <a href="dashboard-monthly.html" style="color: var(--text-dark); text-decoration: none;">
+                <button class="btn-icon"><i class="fas fa-arrow-left"></i></button>
+            </a>
+            <span style="font-size: 20px; font-weight: 600; margin-left: 12px;">Create New Event</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <form id="addEventForm" onsubmit="return handleFormSubmit('addEventForm', event)">
+            <div class="card">
+                <div class="form-group">
+                    <label class="form-label required" for="eventTitle">Event Title</label>
+                    <input type="text" id="eventTitle" name="eventTitle" class="form-input" placeholder="Enter event title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="eventDescription">Description</label>
+                    <textarea id="eventDescription" name="eventDescription" class="form-textarea" placeholder="Add event description"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required" for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label required" for="startTime">Start Time</label>
+                        <input type="time" id="startTime" name="startTime" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required" for="endDate">End Date</label>
+                        <input type="date" id="endDate" name="endDate" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label required" for="endTime">End Time</label>
+                        <input type="time" id="endTime" name="endTime" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="location">Location</label>
+                    <input type="text" id="location" name="location" class="form-input" placeholder="Enter location">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Reminder</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reminder15" name="reminder" value="15" checked>
+                            <label for="reminder15">15 minutes before</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reminder30" name="reminder" value="30">
+                            <label for="reminder30">30 minutes before</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reminder60" name="reminder" value="60">
+                            <label for="reminder60">1 hour before</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Repeat</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="repeatNone" name="repeat" value="none" checked>
+                            <label for="repeatNone">No repeat</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="repeatDaily" name="repeat" value="daily">
+                            <label for="repeatDaily">Daily</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="repeatWeekly" name="repeat" value="weekly">
+                            <label for="repeatWeekly">Weekly</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="repeatMonthly" name="repeat" value="monthly">
+                            <label for="repeatMonthly">Monthly</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="repeatYearly" name="repeat" value="yearly">
+                            <label for="repeatYearly">Yearly</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="calendar">Calendar</label>
+                    <select id="calendar" name="calendar" class="form-select">
+                        <option>My Calendar</option>
+                        <option>Work</option>
+                        <option>Personal</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Share with</label>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <input type="text" class="form-input" placeholder="Add people..." style="flex: 1;">
+                        <button type="button" class="btn btn-outline btn-sm" onclick="alert('Add collaborator')">
+                            <i class="fas fa-user-plus"></i> Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 12px;">
+                <a href="dashboard-monthly.html" class="btn btn-outline" style="flex: 1; text-align: center; text-decoration: none;">Cancel</a>
+                <button type="submit" class="btn btn-primary" style="flex: 1;">Save Event</button>
+            </div>
+        </form>
+        
+        <div class="text-center mt-2">
+            <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-size: 14px;">← Back to Navigation</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Set default dates
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        document.getElementById('startDate').valueAsDate = today;
+        document.getElementById('endDate').valueAsDate = today;
+        document.getElementById('startTime').value = '09:00';
+        document.getElementById('endTime').value = '10:00';
+    </script>
+</body>
+</html>
+

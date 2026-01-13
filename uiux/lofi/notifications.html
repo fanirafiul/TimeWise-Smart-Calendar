@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - TimeWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <a href="dashboard-monthly.html" style="color: var(--text-dark); text-decoration: none;">
+                <button class="btn-icon"><i class="fas fa-arrow-left"></i></button>
+            </a>
+            <span style="font-size: 24px; font-weight: 700; margin-left: 12px;">Notifications</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-target="all-notifications">All</button>
+            <button class="tab" data-target="unread-notifications">Unread</button>
+            <button class="tab" data-target="event-notifications">Events</button>
+            <button class="tab" data-target="task-notifications">Tasks</button>
+        </div>
+        
+        <div id="all-notifications" class="tab-content">
+            <div class="card">
+                <div class="notification-item" onclick="TimeWise.markAsRead(this)">
+                    <div class="notification-icon" style="color: var(--warning);">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Event Reminder</div>
+                        <div class="notification-message">Meeting with Team starts in 15 minutes</div>
+                        <div class="notification-message" style="font-weight: 500;">Today at 09:00</div>
+                        <div class="notification-time">5 minutes ago</div>
+                    </div>
+                </div>
+                
+                <div class="notification-item" onclick="TimeWise.markAsRead(this)">
+                    <div class="notification-icon" style="color: var(--error);">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Task Reminder</div>
+                        <div class="notification-message">Complete project proposal due in 1 hour</div>
+                        <div class="notification-message" style="font-weight: 500;">Due: Today at 14:00</div>
+                        <div class="notification-time">10 minutes ago</div>
+                    </div>
+                </div>
+                
+                <div class="notification-item" onclick="TimeWise.markAsRead(this)">
+                    <div class="notification-icon" style="color: var(--primary);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Collaboration</div>
+                        <div class="notification-message">John Doe commented on "Team Meeting"</div>
+                        <div class="notification-message" style="font-style: italic;">"I'll prepare the agenda"</div>
+                        <div class="notification-time">2 hours ago</div>
+                    </div>
+                </div>
+                
+                <div class="notification-item" onclick="TimeWise.markAsRead(this)" style="opacity: 0.6;">
+                    <div class="notification-icon" style="color: var(--success);">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Sync Status</div>
+                        <div class="notification-message">Google Calendar synced successfully</div>
+                        <div class="notification-time">3 hours ago</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 12px; margin-top: 24px;">
+                <button class="btn btn-outline" style="flex: 1;" onclick="alert('All marked as read')">
+                    Mark all as read
+                </button>
+                <button class="btn btn-outline" style="flex: 1;" onclick="if(confirm('Clear all notifications?')) alert('Cleared')">
+                    Clear all
+                </button>
+            </div>
+        </div>
+        
+        <div id="unread-notifications" class="tab-content" style="display: none;">
+            <div class="card">
+                <div class="notification-item" onclick="TimeWise.markAsRead(this)">
+                    <div class="notification-icon" style="color: var(--warning);">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Event Reminder</div>
+                        <div class="notification-message">Meeting with Team starts in 15 minutes</div>
+                        <div class="notification-time">5 minutes ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="event-notifications" class="tab-content" style="display: none;">
+            <div class="card">
+                <div class="notification-item">
+                    <div class="notification-icon" style="color: var(--warning);">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Event Reminder</div>
+                        <div class="notification-message">Meeting with Team starts in 15 minutes</div>
+                        <div class="notification-time">5 minutes ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="task-notifications" class="tab-content" style="display: none;">
+            <div class="card">
+                <div class="notification-item">
+                    <div class="notification-icon" style="color: var(--error);">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Task Reminder</div>
+                        <div class="notification-message">Complete project proposal due in 1 hour</div>
+                        <div class="notification-time">10 minutes ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-2">
+            <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-size: 14px;">← Back to Navigation</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+

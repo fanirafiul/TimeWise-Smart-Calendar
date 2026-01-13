@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaboration - TimeWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <a href="dashboard-monthly.html" style="color: var(--text-dark); text-decoration: none;">
+                <button class="btn-icon"><i class="fas fa-arrow-left"></i></button>
+            </a>
+            <span style="font-size: 20px; font-weight: 600; margin-left: 12px;">Share Calendar: "Work"</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Share with People</h2>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 16px;">
+                <input type="text" class="form-input" placeholder="Enter email or name..." id="collabEmail">
+                <button class="btn btn-primary" onclick="alert('Add collaborator: ' + document.getElementById('collabEmail').value)">
+                    Add
+                </button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Current Collaborators</h2>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: var(--bg-light); border-radius: 8px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div class="collaborator-avatar">JD</div>
+                        <div>
+                            <div style="font-weight: 600;">John Doe</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">john.doe@email.com</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <span class="badge badge-primary">Editor</span>
+                        <button class="btn btn-outline btn-sm" onclick="alert('Change role')">Change</button>
+                        <button class="btn btn-outline btn-sm" style="color: var(--error);" onclick="if(confirm('Remove John Doe?')) alert('Removed')">Remove</button>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: var(--bg-light); border-radius: 8px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div class="collaborator-avatar">JS</div>
+                        <div>
+                            <div style="font-weight: 600;">Jane Smith</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">jane.smith@email.com</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <span class="badge">Viewer</span>
+                        <button class="btn btn-outline btn-sm" onclick="alert('Change role')">Change</button>
+                        <button class="btn btn-outline btn-sm" style="color: var(--error);" onclick="if(confirm('Remove Jane Smith?')) alert('Removed')">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Permissions</h2>
+            </div>
+            <div style="margin-top: 16px;">
+                <div style="padding: 12px; margin-bottom: 8px; background: var(--bg-light); border-radius: 8px;">
+                    <strong>Viewer:</strong> Can view events only
+                </div>
+                <div style="padding: 12px; margin-bottom: 8px; background: var(--bg-light); border-radius: 8px;">
+                    <strong>Editor:</strong> Can add/edit/delete events
+                </div>
+                <div style="padding: 12px; background: var(--bg-light); border-radius: 8px;">
+                    <strong>Admin:</strong> Full control
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Share Link</h2>
+            </div>
+            <div class="form-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="enableLink" checked>
+                    <label for="enableLink">Enable public link</label>
+                </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 16px;">
+                <input type="text" class="form-input" value="https://timewise.app/share/abc123" readonly>
+                <button class="btn btn-primary" onclick="navigator.clipboard.writeText('https://timewise.app/share/abc123'); alert('Link copied!')">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+        
+        <div style="margin-top: 24px;">
+            <button class="btn btn-primary" style="width: 100%;" onclick="alert('Changes saved')">
+                Save Changes
+            </button>
+        </div>
+        
+        <div class="text-center mt-2">
+            <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-size: 14px;">← Back to Navigation</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
